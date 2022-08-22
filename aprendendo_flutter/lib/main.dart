@@ -31,6 +31,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Talvez tenha a ver com o StatefullWidget, sempre que o tem o evento de rolar
+// a tela o estado muda.??
 class RandomWords extends StatefulWidget {
   const RandomWords({Key? key}) : super(key: key);
 
