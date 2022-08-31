@@ -139,7 +139,8 @@ class _RandomWordsState extends State<RandomWords> {
           }
 
           final alreadySaved = _saved.contains(_suggestions[index]);
-
+          // Então pelo que entendi o onTap se aplica apenas ao botão,
+          // ou seja ou trailing.
           return ListTile(
             title: Text(
               _suggestions[index].asPascalCase,
