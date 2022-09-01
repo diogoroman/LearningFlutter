@@ -41,6 +41,7 @@ class ShoppingListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var name = product.name;
     return ListTile(
       onTap: () {
         onCartChanged(product, inCart);
@@ -69,12 +70,12 @@ class ShoppingList extends StatefulWidget {
   // the State object instead of creating a new State object.
 
   @override
-
   State<ShoppingList> createState() => _ShoppingListState();
 }
 
 class _ShoppingListState extends State<ShoppingList> {
   final _shoppingCart = <Product>{};
+  String minhaVariavel = 'Diogo';
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
@@ -93,7 +94,18 @@ class _ShoppingListState extends State<ShoppingList> {
   }
 
   @override
+  void initState() {
+    // Interessante é assim que fazemos no Django também.
+    // aqui uma sobrecarga do initState, essa função é chamada
+    // apenas na hora de criar o objeto.
+    debugPrint(minhaVariavel);
+    minhaVariavel = 'Diogo Roman';
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    debugPrint(minhaVariavel);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Shopping List'),
